@@ -1,0 +1,76 @@
+.typeChip {
+  color: white;
+  padding: 1px 5px;
+}
+
+.typeChip.normal {
+  background-color: grey;
+}
+
+.typeChip.fighting {
+  background-color: orange;
+}
+
+.typeChip.flying {
+  background-color: deepskyblue;
+}
+
+.typeChip.poison {
+  background-color: blueviolet;
+}
+
+.typeChip.ground {
+  background-color: brown;
+}
+
+.typeChip.rock {
+  background-color: dimgray;
+}
+
+.typeChip.bug {
+  background-color: olive;
+}
+
+.typeChip.ghost {
+  background-color: purple;
+}
+
+.typeChip.steel {
+  background-color: cadetblue;
+}
+
+.typeChip.fire {
+  background-color: red;
+}
+
+.typeChip.water {
+  background-color: blue;
+}
+
+.typeChip.grass {
+  background-color: green;
+}
+
+.typeChip.electric {
+  background-color: yellow;
+}
+
+.typeChip.psychic {
+  background-color: palevioletred;
+}
+
+.typeChip.ice {
+  background-color: lightblue;
+}
+
+.typeChip.dragon {
+  background-color: darkblue;
+}
+
+.typeChip.dark {
+  background-color: saddlebrown;
+}
+
+.typeChip.fairy {
+  background-color: pink;
+}

@@ -1,13 +1,14 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import './App.css'
-import PokemonList from './pages/PokemonList';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <PokemonList />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   );
 }

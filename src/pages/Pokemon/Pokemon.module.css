@@ -1,0 +1,15 @@
+.pokemonDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemonHeader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.typeRow {
+  display: flex;
+  justify-content: center;
+}

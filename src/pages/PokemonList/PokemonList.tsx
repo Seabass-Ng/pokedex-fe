@@ -1,14 +1,7 @@
 import { useQuery } from 'react-query'
 import styles from './PokemonList.module.css';
-
-type PokemonResult = {
-  id: number;
-  name: string;
-  description: string;
-  photo: string;
-  type1: string;
-  type2?: string;
-};
+import type { PokemonResult } from '../../types/types';
+import BodyLayout from '../../modules/BodyLayout/BodyLayout';
 
 const PokemonList = () => {
   const getPokemons = async () => {
@@ -25,14 +18,20 @@ const PokemonList = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className={styles.pokemonList}>
-      {data && data.map((pokemon) => (
-        <div className={styles.pokemon} key={pokemon.id}>
-          <img src={pokemon.photo} />
-          {pokemon.name}
+    <BodyLayout
+      error={error}
+      isLoading={isLoading}
+      successfulElement={(
+        <div className={styles.pokemonList}>
+          {data && data.map((pokemon) => (
+            <div className={styles.pokemon} key={pokemon.id}>
+              <img src={pokemon.photo} />
+              {pokemon.name}
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    />
   )
 }
 

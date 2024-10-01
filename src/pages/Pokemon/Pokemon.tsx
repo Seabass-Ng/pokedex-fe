@@ -1,9 +1,10 @@
 import { useQuery } from "react-query";
 import type { PokemonResult } from "../../types/types";
 import BodyLayout from "../../modules/BodyLayout/BodyLayout";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import TypeChip from "../../modules/TypeChip/TypeChip";
 import styles from './Pokemon.module.css'
+import classnames from "../../utils/classnames";
 
 const Pokemon = () => {
   const { pokemonId } = useParams();
@@ -22,30 +23,46 @@ const Pokemon = () => {
       error={error}
       isLoading={isLoading}
       successfulElement={
-        data ? (
-          <div className={styles.pokemonDetails}>
-            <div className={styles.pokemonHeader}>
-              <div>
-                {data.name}
+        <div className={styles.page}>
+          <Link className={styles.backArrow} to="..">
+            &larr; Back
+          </Link>
+          {data ? (
+            <div className={classnames(styles.pokemonDetails, styles[data.type1.toLowerCase()])}>
+              <div className={styles.pokemonHeader}>
+                <div className={styles.pokemonHeaderItem}>
+                  {data.name}
+                </div>
+                <div className={styles.pokemonHeaderItem}>
+                  ID: {data.id}
+                </div>
               </div>
               <div>
-                ID: {data.id}
+                <img alt={data.name} src={data.photo} />
+              </div>
+              <div className={classnames(styles.cellWithHeader, styles[data.type1.toLowerCase()])}>
+                <div className={styles.header}>
+                  Types
+                </div>
+                <div className={styles.typeRow}>
+                  <TypeChip pokemonType={data.type1} />
+                  {data.type2 && (<TypeChip pokemonType={data.type2} />)}
+                </div>
+              </div>
+              <div className={classnames(styles.cellWithHeader, styles[data.type1.toLowerCase()])}>
+                <div className={styles.header}>
+                  Description
+                </div>
+                <p className={styles.pokemonDescription}>
+                  {data.description}
+                </p>
               </div>
             </div>
-            <div>
-              <img alt={data.name} src={data.photo} />
-            </div>
-            <div className={styles.typeRow}>
-              <TypeChip pokemonType={data.type1} />
-              {data.type2 && (<TypeChip pokemonType={data.type2} />)}
-            </div>
-            <p>
-              {data.description}
-            </p>
-          </div>
-        ) : (
-          <div>Sorry! Please try again later.</div>
-        )}
+          ) : (
+            <div>Sorry! Please try again later.</div>
+          )}
+        </div>
+      }
     />
   )
 };

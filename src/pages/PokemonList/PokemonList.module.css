@@ -8,11 +8,13 @@
   align-items: center;
   border: 1px solid gray;
   border-radius: 5px;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 10px;
   padding: 2px;
+  text-decoration: none;
   width: 206px;
 }
 

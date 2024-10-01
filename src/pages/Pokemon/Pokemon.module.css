@@ -1,6 +1,19 @@
+.page {
+  width: 500px;
+}
+
+.backArrow {
+  color: black;
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
 .pokemonDetails {
+  border-radius: var(--bubble-radius);
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .pokemonHeader {
@@ -9,7 +22,134 @@
   width: 100%;
 }
 
+.pokemonHeader div:first-child {
+  margin-right: 20px;
+}
+
+.cellWithHeader {
+  border-radius: var(--bubble-radius);
+  filter: brightness(150%);
+  margin: 10px 0;
+}
+
+.cellWithHeader .header {
+  color: black;
+  padding: 2px;
+  text-align: center;
+}
+
 .typeRow {
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: var(--bubble-radius);
   display: flex;
   justify-content: center;
+  padding: 10px;
+}
+
+.pokemonHeaderItem {
+  background-color: white;
+  border-radius: var(--bubble-radius);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  width: calc(100% - 10px);
+}
+
+.pokemonDescription {
+  background-color: white;
+  border-radius: var(--bubble-radius);
+  margin: 0;
+  padding: 20px;
+}
+
+.pokemonDetails.normal,
+.cellWithHeader.normal {
+  background-color: var(--normal-bg-color);
+}
+
+.pokemonDetails.fighting,
+.cellWithHeader.fighting {
+  background-color: var(--fighting-bg-color);
+}
+
+.pokemonDetails.flying,
+.cellWithHeader.flying {
+  background-color: var(--flying-bg-color);
+}
+
+.pokemonDetails.poison,
+.cellWithHeader.poison {
+  background-color: var(--poison-bg-color);
+}
+
+.pokemonDetails.ground,
+.cellWithHeader.ground {
+  background-color: var(--ground-bg-color);
+}
+
+.pokemonDetails.rock,
+.cellWithHeader.rock {
+  background-color: var(--rock-bg-color);
+}
+
+.pokemonDetails.bug,
+.cellWithHeader.bug {
+  background-color: var(--bug-bg-color);
+}
+
+.pokemonDetails.ghost,
+.cellWithHeader.ghost {
+  background-color: var(--ghost-bg-color);
+}
+
+.pokemonDetails.steel,
+.cellWithHeader.steel {
+  background-color: var(--steel-bg-color);
+}
+
+.pokemonDetails.fire,
+.cellWithHeader.fire {
+  background-color: var(--fire-bg-color);
+}
+
+.pokemonDetails.water,
+.cellWithHeader.water {
+  background-color: var(--water-bg-color);
+}
+
+.pokemonDetails.grass,
+.cellWithHeader.grass {
+  background-color: var(--grass-bg-color);
+}
+
+.pokemonDetails.electric,
+.cellWithHeader.electric {
+  background-color: var(--electric-bg-color);
+}
+
+.pokemonDetails.psychic,
+.cellWithHeader.psychic {
+  background-color: var(--psychic-bg-color);
+}
+
+.pokemonDetails.ice,
+.cellWithHeader.ice {
+  background-color: var(--ice-bg-color);
+}
+
+.pokemonDetails.dragon,
+.cellWithHeader.dragon {
+  background-color: var(--dragon-bg-color);
+}
+
+.pokemonDetails.dark,
+.cellWithHeader.dark {
+  background-color: var(--dark-bg-color);
+}
+
+.pokemonDetails.fairy,
+.cellWithHeader.fairy {
+  background-color: var(--fairy-bg-color);
 }

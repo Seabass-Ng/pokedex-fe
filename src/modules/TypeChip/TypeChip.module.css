@@ -1,76 +1,76 @@
 .typeChip {
-  color: white;
+  color: black;
   padding: 1px 5px;
 }
 
 .typeChip.normal {
-  background-color: grey;
+  background-color: var(--normal-bg-color);
 }
 
 .typeChip.fighting {
-  background-color: orange;
+  background-color: var(--fighting-bg-color);
 }
 
 .typeChip.flying {
-  background-color: deepskyblue;
+  background-color: var(--flying-bg-color);
 }
 
 .typeChip.poison {
-  background-color: blueviolet;
+  background-color: var(--poison-bg-color);
 }
 
 .typeChip.ground {
-  background-color: brown;
+  background-color: var(--ground-bg-color);
 }
 
 .typeChip.rock {
-  background-color: dimgray;
+  background-color: var(--rock-bg-color);
 }
 
 .typeChip.bug {
-  background-color: olive;
+  background-color: var(--bug-bg-color);
 }
 
 .typeChip.ghost {
-  background-color: purple;
+  background-color: var(--ghost-bg-color);
 }
 
 .typeChip.steel {
-  background-color: cadetblue;
+  background-color: var(--steel-bg-color);
 }
 
 .typeChip.fire {
-  background-color: red;
+  background-color: var(--fire-bg-color);
 }
 
 .typeChip.water {
-  background-color: blue;
+  background-color: var(--water-bg-color);
 }
 
 .typeChip.grass {
-  background-color: green;
+  background-color: var(--grass-bg-color);
 }
 
 .typeChip.electric {
-  background-color: yellow;
+  background-color: var(--electric-bg-color);
 }
 
 .typeChip.psychic {
-  background-color: palevioletred;
+  background-color: var(--psychic-bg-color);
 }
 
 .typeChip.ice {
-  background-color: lightblue;
+  background-color: var(--ice-bg-color);
 }
 
 .typeChip.dragon {
-  background-color: darkblue;
+  background-color: var(--dragon-bg-color);
 }
 
 .typeChip.dark {
-  background-color: saddlebrown;
+  background-color: var(--dark-bg-color);
 }
 
 .typeChip.fairy {
-  background-color: pink;
+  background-color: var(--fairy-bg-color);
 }

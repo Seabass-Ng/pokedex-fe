@@ -2,6 +2,7 @@ import { useQuery } from 'react-query'
 import styles from './PokemonList.module.css';
 import type { PokemonResult } from '../../types/types';
 import BodyLayout from '../../modules/BodyLayout/BodyLayout';
+import { Link } from 'react-router-dom';
 
 const PokemonList = () => {
   const getPokemons = async () => {
@@ -22,14 +23,17 @@ const PokemonList = () => {
       error={error}
       isLoading={isLoading}
       successfulElement={(
-        <div className={styles.pokemonList}>
-          {data && data.map((pokemon) => (
-            <div className={styles.pokemon} key={pokemon.id}>
-              <img src={pokemon.photo} />
-              {pokemon.name}
-            </div>
-          ))}
-        </div>
+        <>
+          <h1>Welcome to the Pokedex</h1>
+          <div className={styles.pokemonList}>
+            {data && data.map((pokemon) => (
+              <Link className={styles.pokemon} key={pokemon.id} to={`/pokemon/${pokemon.id}`}>
+                <img src={pokemon.photo} />
+                {pokemon.name}
+              </Link>
+            ))}
+          </div>
+        </>
       )}
     />
   )

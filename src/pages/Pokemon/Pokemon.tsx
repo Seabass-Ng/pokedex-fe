@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import TypeChip from "../../modules/TypeChip/TypeChip";
 import styles from './Pokemon.module.css'
 import classnames from "../../utils/classnames";
+import MoveTable from "../../modules/MoveTable/MoveTable";
+import EvolveFrom from "../../modules/Evolution/EvolveFrom";
 
 const Pokemon = () => {
   const { pokemonId } = useParams();
@@ -22,12 +24,13 @@ const Pokemon = () => {
     <BodyLayout
       error={error}
       isLoading={isLoading}
-      successfulElement={
-        <div className={styles.page}>
-          <Link className={styles.backArrow} to="..">
-            &larr; Back
-          </Link>
-          {data ? (
+    >
+      <div className={styles.page}>
+        <Link className={styles.backArrow} to="..">
+          &larr; Back
+        </Link>
+        {data ? (
+          <>
             <div className={classnames(styles.pokemonDetails, styles[data.type1.toLowerCase()])}>
               <div className={styles.pokemonHeader}>
                 <div className={styles.pokemonHeaderItem}>
@@ -58,12 +61,14 @@ const Pokemon = () => {
                 </p>
               </div>
             </div>
-          ) : (
-            <div>Sorry! Please try again later.</div>
-          )}
-        </div>
-      }
-    />
+            <MoveTable pokemonId={data.id} />
+            <EvolveFrom pokemon={data} />
+          </>
+        ) : (
+          <div>Sorry! Please try again later.</div>
+        )}
+      </div>
+    </BodyLayout>
   )
 };
 

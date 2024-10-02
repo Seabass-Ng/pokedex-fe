@@ -1,18 +1,20 @@
+import { type ReactElement } from "react";
+
 type Props = {
   error: unknown;
   isLoading: unknown;
-  successfulElement: React.ReactElement;
+  children: ReactElement;
 };
 
 const BodyLayout = ({
   error,
   isLoading,
-  successfulElement
+  children,
 }: Props) => {
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;
 
-  return successfulElement;
+  return children;
 };
 
 export default BodyLayout;

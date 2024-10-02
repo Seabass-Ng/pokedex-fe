@@ -22,20 +22,19 @@ const PokemonList = () => {
     <BodyLayout
       error={error}
       isLoading={isLoading}
-      successfulElement={(
-        <>
-          <h1>Welcome to the Pokedex</h1>
-          <div className={styles.pokemonList}>
-            {data && data.map((pokemon) => (
-              <Link className={styles.pokemon} key={pokemon.id} to={`/pokemon/${pokemon.id}`}>
-                <img src={pokemon.photo} />
-                {pokemon.name}
-              </Link>
-            ))}
-          </div>
-        </>
-      )}
-    />
+    >
+      <>
+        <h1>Welcome to the Pokedex</h1>
+        <div className={styles.pokemonList}>
+          {data && data.map((pokemon) => (
+            <Link className={styles.pokemon} key={pokemon.id} to={`/pokemon/${pokemon.id}`}>
+              <img src={pokemon.photo} />
+              {pokemon.name}
+            </Link>
+          ))}
+        </div>
+      </>
+    </BodyLayout>
   )
 }
 

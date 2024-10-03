@@ -1,5 +1,6 @@
 .typeChip {
-  color: black;
+  border-radius: 5px;
+  color: white;
   padding: 1px 5px;
 }
 

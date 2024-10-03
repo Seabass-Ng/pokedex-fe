@@ -1,0 +1,14 @@
+.container {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container.bgGrass {
+  background-color: var(--grass-bg-color);
+}
+
+.container.borderPoison {
+  border: 1px solid var(--poison-border-color);
+}

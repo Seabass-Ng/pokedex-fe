@@ -19,6 +19,8 @@
   --fairy-bg-color: pink;
 
   --bubble-radius: 25px;
+
+  --poison-border-color: purple;
 }
 
 #root {

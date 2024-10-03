@@ -1,9 +1,9 @@
-import { type ReactElement } from "react";
+import { type ReactNode } from "react";
 
 type Props = {
   error: unknown;
   isLoading: unknown;
-  children: ReactElement;
+  children: ReactNode;
 };
 
 const BodyLayout = ({

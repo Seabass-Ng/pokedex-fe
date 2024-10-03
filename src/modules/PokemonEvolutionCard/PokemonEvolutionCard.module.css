@@ -1,0 +1,44 @@
+.imgContainer,
+.imgContainer img {
+  border-radius: 100px;
+  height: 96px;
+  width: 96px;
+  position: relative;
+}
+
+.imgContainer img {
+  position: absolute;
+  filter: brightness(67%);
+}
+
+.cardContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.imgContainer.bgGrass,
+.metadata.grass {
+  background-color: var(--grass-bg-color);
+  filter: brightness(150%);
+}
+
+.imgContainer.borderPoison {
+  border: 2px solid var(--poison-border-color);
+}
+
+.metadata {
+  align-items: center;
+  border-radius: var(--bubble-radius);
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.typeRow {
+  display: flex;
+  filter: brightness(67%);
+  margin-top: 5px;
+}

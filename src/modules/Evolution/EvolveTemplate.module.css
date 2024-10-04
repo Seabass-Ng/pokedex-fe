@@ -9,6 +9,38 @@
   background-color: var(--grass-bg-color);
 }
 
+.container.bgNormal {
+  background-color: var(--normal-bg-color);
+}
+
+.container.bgElectric {
+  background-color: var(--electric-bg-color);
+}
+
+.container.bgFire {
+  background-color: var(--fire-bg-color);
+}
+
+.container.bgWater {
+  background-color: var(--water-bg-color);
+}
+
 .container.borderPoison {
   border: 1px solid var(--poison-border-color);
+}
+
+.container.borderNormal {
+  border: 1px solid var(--normal-border-color);
+}
+
+.container.borderElectric {
+  border: 1px solid var(--electric-border-color);
+}
+
+.container.borderFire {
+  border: 1px solid var(--fire-border-color);
+}
+
+.container.borderWater {
+  border: 1px solid var(--water-border-color);
 }

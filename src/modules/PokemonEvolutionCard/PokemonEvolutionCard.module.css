@@ -18,19 +18,59 @@
   padding: 10px;
 }
 
+.imgContainer,
+.metadata {
+  filter: brightness(150%);
+}
+
 .imgContainer.bgGrass,
 .metadata.grass {
   background-color: var(--grass-bg-color);
-  filter: brightness(150%);
+}
+
+.imgContainer.bgNormal,
+.metadata.normal {
+  background-color: var(--normal-bg-color);
+}
+
+.imgContainer.bgElectric,
+.metadata.electric {
+  background-color: var(--electric-bg-color);
+}
+
+.imgContainer.bgFire,
+.metadata.fire {
+  background-color: var(--fire-bg-color);
+}
+
+.imgContainer.bgWater,
+.metadata.water {
+  background-color: var(--water-bg-color);
 }
 
 .imgContainer.borderPoison {
   border: 2px solid var(--poison-border-color);
 }
 
+.imgContainer.borderNormal {
+  border: 2px solid var(--normal-border-color);
+}
+
+.imgContainer.borderFire {
+  border: 2px solid var(--fire-border-color);
+}
+
+.imgContainer.borderElectric {
+  border: 2px solid var(--electric-border-color);
+}
+
+.imgContainer.borderWater {
+  border: 2px solid var(--water-border-color);
+}
+
 .metadata {
   align-items: center;
-  border-radius: var(--bubble-radius);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin-top: 5px;

@@ -7,6 +7,7 @@ import styles from './Pokemon.module.css'
 import classnames from "../../utils/classnames";
 import MoveTable from "../../modules/MoveTable/MoveTable";
 import EvolveFrom from "../../modules/Evolution/EvolveFrom";
+import EvolveTo from "../../modules/Evolution/EvolveTo";
 
 const Pokemon = () => {
   const { pokemonId } = useParams();
@@ -63,6 +64,7 @@ const Pokemon = () => {
             </div>
             <MoveTable pokemonId={data.id} />
             <EvolveFrom pokemon={data} />
+            <EvolveTo pokemon={data} />
           </>
         ) : (
           <div>Sorry! Please try again later.</div>

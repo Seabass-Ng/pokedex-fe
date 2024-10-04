@@ -20,7 +20,11 @@
 
   --bubble-radius: 25px;
 
+  --electric-border-color: yellow;
+  --normal-border-color: darkgray;
   --poison-border-color: purple;
+  --fire-border-color: red;
+  --water-border-color: blue;
 }
 
 #root {

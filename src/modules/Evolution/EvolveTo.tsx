@@ -25,14 +25,21 @@ const EvolveTo = ({
       error={error}
       isLoading={isLoading}
     >
-      <h3>Evolve To</h3>
-      {data?.condition && (
-        <EvolveTemplate
-          condition={data.condition}
-          pokemon1={pokemon}
-          pokemon2={data.evolvePokemon}
-        />
-      )}
+
+      {(data?.length || 0) > 0 &&
+        (
+          <>
+            <h3>Evolve To</h3>
+            {(data || []).map(evolveMetadata => (
+              <EvolveTemplate
+                condition={evolveMetadata.condition}
+                pokemon1={pokemon}
+                pokemon2={evolveMetadata.evolvePokemon}
+              />
+            ))}
+          </>
+        )
+      }
     </BodyLayout>
   )
 };

@@ -1,7 +1,7 @@
 import type { PokemonResult } from "../../types/types"
 
 const getPokemon = async (pokemonId: string): Promise<PokemonResult> => {
-  const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemonId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pokemon/${pokemonId}`, {
     mode: 'cors'
   })
   return res.json()

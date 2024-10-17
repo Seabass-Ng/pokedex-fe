@@ -7,7 +7,7 @@ const EvolveTo = async ({
   pokemon
 }: Props) => {
   const getEvolveTo = async (): Promise<Result[] | null> => {
-    const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemon.id}/evolveTo`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pokemon/${pokemon.id}/evolveTo`)
     if (res.status === 204) {
       return null;
     }

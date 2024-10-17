@@ -57,9 +57,9 @@ const Pokemon = ({
                 </p>
               </div>
             </div>
-            {/* <MoveTable pokemonId={pokemon.id} /> */}
-            {/* <EvolveFrom pokemon={pokemon} /> */}
-            {/* <EvolveTo pokemon={pokemon} /> */}
+            <MoveTable pokemonId={pokemon.id} />
+            <EvolveFrom pokemon={pokemon} />
+            <EvolveTo pokemon={pokemon} />
           </>
         ) : (
           <div>Sorry! Please try again later.</div>

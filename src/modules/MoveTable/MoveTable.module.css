@@ -19,11 +19,18 @@
   border-right: var(--td-border);
 }
 
-
 .tr td:last-child {
   border-right: none;
 }
 
 .table tr:last-child td {
   border-bottom: none;
+}
+
+.table tr:nth-child(even) td {
+  background-color: white;
+}
+
+.table tr:nth-child(odd) td {
+  background-color: lightgray;
 }

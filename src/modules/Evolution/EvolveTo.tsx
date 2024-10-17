@@ -3,10 +3,10 @@ import type { Props, Result } from "./types";
 import EvolveTemplate from "./EvolveTemplate";
 import BodyLayout from "../BodyLayout/BodyLayout";
 
-const EvolveTo = ({
+const EvolveTo = async ({
   pokemon
 }: Props) => {
-  const getEvolveTo = async () => {
+  const getEvolveTo = async (): Promise<Result[] | null> => {
     const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemon.id}/evolveTo`)
     if (res.status === 204) {
       return null;
@@ -15,17 +15,22 @@ const EvolveTo = ({
     return result;
   }
 
-  const { data, error, isLoading } = useQuery<Result[] | null>({
-    queryKey: 'getEvolveTo',
-    queryFn: getEvolveTo,
-  });
+  let data: Result[] | null = null;
+  let error;
+  try {
+    data = await getEvolveTo();
+  } catch (fetchError) {
+    error = fetchError;
+    console.error(error)
+  }
+
+  // const { data, error, isLoading } = useQuery<Result[] | null>({
+  //   queryKey: 'getEvolveTo',
+  //   queryFn: getEvolveTo,
+  // });
 
   return (
-    <BodyLayout
-      error={error}
-      isLoading={isLoading}
-    >
-
+    <BodyLayout error={error}>
       {(data?.length || 0) > 0 &&
         (
           <>

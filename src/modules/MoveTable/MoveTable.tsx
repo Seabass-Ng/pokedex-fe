@@ -20,15 +20,26 @@ type MoveItem = {
 const MoveTable = async ({
   pokemonId
 }: Props) => {
-  const getMoves = async () => {
-    const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemonId}/moves`)
+  const getMoves = async (): Promise<MoveItem[]> => {
+    const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemonId}/moves`, {
+      mode: 'cors'
+    })
     return res.json()
   }
 
-  const { data, error } = useQuery<Array<MoveItem>>({
-    queryKey: 'getMoves',
-    queryFn: getMoves,
-  });
+  let data;
+  let error;
+  try {
+    data = await getMoves();
+  } catch (fetchError) {
+    error = fetchError;
+    console.error(error)
+  }
+
+  // const { data, error } = useQuery<Array<MoveItem>>({
+  //   queryKey: 'getMoves',
+  //   queryFn: getMoves,
+  // });
 
   return (
     <BodyLayout
@@ -38,24 +49,28 @@ const MoveTable = async ({
         <>
           <h3>Moves</h3>
           <table className={styles.table}>
-            <tr className={styles.tr}>
-              <th className={styles.td}>Level</th>
-              <th className={styles.td}>Move</th>
-              <th className={styles.td}>Type</th>
-              <th className={styles.td}>Power</th>
-              <th className={styles.td}>Accuracy</th>
-              <th className={styles.td}>PP</th>
-            </tr>
-            {data.map(move => (
-              <tr className={styles.tr} key={move.id}>
-                <td>{move.level}</td>
-                <td>{move.name}</td>
-                <td><TypeChip pokemonType={move.type} /></td>
-                <td>{move.power ?? '--'}</td>
-                <td>{move.accuracy}</td>
-                <td>{move.pp}</td>
+            <thead>
+              <tr className={styles.tr}>
+                <th className={styles.th}>Level</th>
+                <th className={styles.th}>Move</th>
+                <th className={styles.th}>Type</th>
+                <th className={styles.th}>Power</th>
+                <th className={styles.th}>Accuracy</th>
+                <th className={styles.th}>PP</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data.map(move => (
+                <tr className={styles.tr} key={move.name}>
+                  <td className={styles.td}>{move.level}</td>
+                  <td className={styles.td}>{move.name}</td>
+                  <td className={styles.td}><TypeChip pokemonType={move.type} /></td>
+                  <td className={styles.td}>{move.power ?? '--'}</td>
+                  <td className={styles.td}>{move.accuracy}</td>
+                  <td className={styles.td}>{move.pp}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </>
       ) : (

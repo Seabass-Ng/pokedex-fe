@@ -4,29 +4,26 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev -p 8081",
+    "build": "next build -p 8081",
+    "start": "next start"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.59.13",
+    "next": "^14.2.15",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-query": "^3.39.3",
-    "react-router-dom": "^6.26.2"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
     "@types/node": "^22.6.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
     "typescript": "5.5.4",
-    "typescript-eslint": "^8.8.0",
-    "vite": "^5.4.1"
+    "typescript-eslint": "^8.8.0"
   }
 }

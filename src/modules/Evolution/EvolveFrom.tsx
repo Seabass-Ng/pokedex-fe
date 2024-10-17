@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import EvolveTemplate from "./EvolveTemplate";
 import type { Props, Result } from "./types";
 import BodyLayout from "../BodyLayout/BodyLayout";
@@ -7,7 +7,7 @@ const EvolveFrom = ({
   pokemon
 }: Props) => {
   const getEvolveFrom = async () => {
-    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/pokemon/${pokemon.id}/evolveFrom`)
+    const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemon.id}/evolveFrom`)
     if (res.status === 204) {
       return null;
     }

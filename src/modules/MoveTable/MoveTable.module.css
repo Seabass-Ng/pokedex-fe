@@ -1,34 +1,29 @@
-:root {
-  --td-border: 1px solid gray;
-  --outer-border: 1px solid green;
-}
-
-table {
+.table {
   border-spacing: 0;
   border: var(--outer-border);
   border-radius: 5px;
 }
 
-th,
-td {
+.th,
+.td {
   padding: 5px 20px;
 }
 
-th {
+.th {
   background-color: purple;
   color: black;
 }
 
-td {
+.td {
   border-bottom: var(--td-border);
   border-right: var(--td-border);
 }
 
 
-tr td:last-child {
+.tr td:last-child {
   border-right: none;
 }
 
-table tr:last-child td {
+.table tr:last-child td {
   border-bottom: none;
 }

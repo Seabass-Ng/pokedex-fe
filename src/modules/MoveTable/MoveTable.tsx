@@ -1,6 +1,6 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import BodyLayout from "../BodyLayout/BodyLayout";
-import './MoveTable.module.css';
+import styles from './MoveTable.module.css';
 import TypeChip from "../TypeChip/TypeChip";
 import type { TYPES } from "../../types/types";
 
@@ -17,15 +17,15 @@ type MoveItem = {
   level: number;
 }
 
-const MoveTable = ({
+const MoveTable = async ({
   pokemonId
 }: Props) => {
   const getMoves = async () => {
-    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/pokemon/${pokemonId}/moves`)
+    const res = await fetch(`${process.env.SERVER_URL}/pokemon/${pokemonId}/moves`)
     return res.json()
   }
 
-  const { data, error, isLoading } = useQuery<Array<MoveItem>>({
+  const { data, error } = useQuery<Array<MoveItem>>({
     queryKey: 'getMoves',
     queryFn: getMoves,
   });
@@ -33,22 +33,21 @@ const MoveTable = ({
   return (
     <BodyLayout
       error={error}
-      isLoading={isLoading}
     >
       {data ? (
         <>
           <h3>Moves</h3>
-          <table>
-            <tr>
-              <th>Level</th>
-              <th>Move</th>
-              <th>Type</th>
-              <th>Power</th>
-              <th>Accuracy</th>
-              <th>PP</th>
+          <table className={styles.table}>
+            <tr className={styles.tr}>
+              <th className={styles.td}>Level</th>
+              <th className={styles.td}>Move</th>
+              <th className={styles.td}>Type</th>
+              <th className={styles.td}>Power</th>
+              <th className={styles.td}>Accuracy</th>
+              <th className={styles.td}>PP</th>
             </tr>
             {data.map(move => (
-              <tr>
+              <tr className={styles.tr} key={move.id}>
                 <td>{move.level}</td>
                 <td>{move.name}</td>
                 <td><TypeChip pokemonType={move.type} /></td>

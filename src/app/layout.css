@@ -25,6 +25,9 @@
   --poison-border-color: purple;
   --fire-border-color: red;
   --water-border-color: blue;
+
+  --td-border: 1px solid gray;
+  --outer-border: 1px solid green;
 }
 
 #root {

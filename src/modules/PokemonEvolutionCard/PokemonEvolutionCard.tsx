@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { PokemonResult } from "../../types/types";
 import classnames from "../../utils/classnames";
 import TypeChip from "../TypeChip/TypeChip";
@@ -26,7 +27,7 @@ const PokemonEvolutionCard = ({
         <img src={pokemon.photo} />
       </div>
       <div className={classnames(styles.metadata, styles[pokemon.type1.toLowerCase()])}>
-        <div>{pokemon.name}</div>
+        <a href={`/pokemon/${pokemon.id}`}>{pokemon.name}</a>
         <div className={styles.typeRow}>
           <TypeChip pokemonType={pokemon.type1} />
           {pokemon.type2 && (<TypeChip pokemonType={pokemon.type2} />)}
